@@ -35,17 +35,21 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             myRigidBody.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
+
             if(!myAudioSource.isPlaying)
             {
                 PlaySFX();
             }
+
             if (!mainEngineParticles.isPlaying)
             {
                 mainEngineParticles.Play();
             }
             
         }
+
         else
+
         {
             myAudioSource.Stop();
             mainEngineParticles.Stop();
